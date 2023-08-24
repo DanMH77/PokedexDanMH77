@@ -3,7 +3,11 @@ import AppRouter from './router/AppRouter';
 
 function App() {
   return (
-  <AppRouter/>
+    <div className='body'>
+
+      <AppRouter/>
+      
+    </div>
   );
 }
 
