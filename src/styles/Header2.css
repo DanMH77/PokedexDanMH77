@@ -1,0 +1,63 @@
+#imagen1{
+    max-width: 138px;
+}
+
+.pokemon-container{
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+    --cell-size: 52px;
+    --cell-spacing: 1px;
+    --cells: 3;
+    --total-size: calc(var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing)));
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .cell {
+    flex: 0 0 var(--cell-size);
+    margin: var(--cell-spacing);
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 4px;
+    animation: 1.5s ripple ease infinite;
+  }
+  
+
+
+  .cell.d-0 {
+    animation-delay: 100ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cell.d-1 {
+    animation-delay: 100ms;
+  }
+ 
+  
+  .cell:nth-child(1) {
+    --cell-color: #a00b0b;
+  }
+  
+  
+  /*Animation*/
+  @keyframes ripple {
+    0% {
+      background-color: transparent;
+    }
+  
+    30% {
+      background-color: var(--cell-color);
+    }
+  
+    60% {
+      background-color: transparent;
+    }
+  
+    100% {
+      background-color: transparent;
+    }
+  }

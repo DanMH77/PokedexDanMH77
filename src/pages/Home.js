@@ -2,14 +2,15 @@ import React from 'react';
 import Header from '../components/Header';
 import "../styles/Home.css"
 import Section from '../components/Section';
+import Header2 from '../components/Header2';
 
     function Home(){
 
  return (
    <div>
-  <h1>Welcome Home </h1>
-  <Header/>
+     <h1>Welcome </h1> <br/>
  <div id='Header'>
+  <Header2/>
   <Section/>
  </div>
  </div>
