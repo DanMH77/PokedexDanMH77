@@ -9,13 +9,13 @@ function Navbar(){
 <nav id='header'>
     <ul>
         <li id='outer'>
-            <Link to="/" className='Home' ><button class="button">Home</button></Link> 
+            <Link to="/" className='Home' ><button className="button">Home</button></Link> 
         </li>
         <li>  
-            <Link to="/about" className='About'><button class="button2"> About</button></Link>
+            <Link to="/about" className='About'><button className="button2"> About</button></Link>
         </li>
         <li>
-        <Link to="/pokedex" className='Poke' ><button class="button3">Pokedex</button></Link>
+        <Link to="/pokedex" className='Poke' ><button className="button3">Pokedex</button></Link>
         </li>
     </ul>
 </nav>

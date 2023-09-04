@@ -16,7 +16,7 @@ import pokeball from '../styles/images/2024-play-pokemon-169.png'
 <div className='new2' >
     <img   src={pokeball} className='imgnew2' />
 
-    <button class="btn"> <a className='textnew2'  href='https://www.pokemon.com/el/noticias-pokemon/novedades-sobre-la-temporada-de-la-serie-de-campeonatos-pokemon-2024' target='blank'>  ¡Descubre dónde se celebrarán los Campeonatos Internacionales de esta temporada y el enorme aumento de los premios otorgados en la Serie de Campeonatos!
+    <button className="btn"> <a className='textnew2'  href='https://www.pokemon.com/el/noticias-pokemon/novedades-sobre-la-temporada-de-la-serie-de-campeonatos-pokemon-2024' target='blank'>  ¡Descubre dónde se celebrarán los Campeonatos Internacionales de esta temporada y el enorme aumento de los premios otorgados en la Serie de Campeonatos!
 </a> </button>
   
 </div>
@@ -24,7 +24,7 @@ import pokeball from '../styles/images/2024-play-pokemon-169.png'
 <div className='new2' >
     <img   src={pokeball} className='imgnew2' />
 
-    <button class="btn"> <a className='textnew2'  href='https://www.pokemon.com/el/noticias-pokemon/novedades-sobre-la-temporada-de-la-serie-de-campeonatos-pokemon-2024' target='blank'>  ¡Descubre dónde se celebrarán los Campeonatos Internacionales de esta temporada y el enorme aumento de los premios otorgados en la Serie de Campeonatos!
+    <button className="btn"> <a className='textnew2'  href='https://www.pokemon.com/el/noticias-pokemon/novedades-sobre-la-temporada-de-la-serie-de-campeonatos-pokemon-2024' target='blank'>  ¡Descubre dónde se celebrarán los Campeonatos Internacionales de esta temporada y el enorme aumento de los premios otorgados en la Serie de Campeonatos!
 </a> </button>
     
 </div>
