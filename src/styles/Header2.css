@@ -4,7 +4,6 @@
 
 .pokemon-container{
     display: flex;
-    justify-content: center;
 }
 
 .loader {

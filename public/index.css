@@ -4,3 +4,17 @@ body{
     background-size: 1280px  595px;
   background-attachment: fixed;
 }
+
+
+
+@media (max-width: 600px) {
+  body{
+    background-image: url(https://pbs.twimg.com/media/EjTHX_lXcAAa0o8.jpg);
+    background-repeat: no-repeat;
+    background-size: 1280px  2600px;
+  background-attachment: fixed;
+}
+
+
+
+}

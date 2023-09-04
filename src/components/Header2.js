@@ -11,7 +11,7 @@ const Header2 = () => {
       try {
 
         const getRandomIds = () => Math.floor(Math.random() * 200) + 1;
-        const pokemonIds = Array.from({ length: 7 }, getRandomIds);
+        const pokemonIds = Array.from({ length: 8 }, getRandomIds);
 
         var fetchedPokemons = [];
         

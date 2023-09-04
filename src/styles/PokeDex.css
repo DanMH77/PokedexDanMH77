@@ -1,0 +1,23 @@
+.pokedex{
+    color: aliceblue;
+    display: flex;
+    background-color: black;
+margin: 10px;
+height: 300px;
+width: 250px;
+border: 2px solid red;
+border-radius: 5px;
+}
+
+
+
+.CartsImage{
+    max-Width: "00px";
+     max-Height: "200px"; 
+}
+
+
+.Carts-container{
+    display: flex;
+    justify-content: center;
+}
