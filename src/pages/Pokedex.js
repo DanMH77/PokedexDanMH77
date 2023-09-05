@@ -1,12 +1,12 @@
 import React from 'react';
-import Pokewikki from '../components/PokeDex';
+import Pokedex33 from '../components/PokeCards';
 
     function Pokedex(){
 
  return (
 <div>
   <h1>Pokemon Go</h1>
-  <Pokewikki/>
+    <Pokedex33/>
  </div>
 )	}
 
