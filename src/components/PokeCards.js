@@ -7,12 +7,18 @@ function Pokedex33() {
 
   const [Pokemons, setPokemons] = useState([]);
   const [isLoading, setisLoading] = useState(false);
-  const [newFavorite , setNewFavorite] = useState ('');
+  const [newFavorite , setNewFavorite] = useState (false);
   const [loves, setLoves] = useState (0);
 
   const handleLoves = () => { 
 
   setLoves(loves +1);
+  };
+
+
+  const handleFavorite = () => {
+setNewFavorite(newFavorite = true)
+
   };
 
     useEffect(() => {
@@ -37,17 +43,36 @@ function Pokedex33() {
  
     return (
 
-      <div className="contenedor">
+      <div className="Varaja">
           {isLoading ? (
           Pokemons.map((item) => {
 
     return (
-      <div className='card' key={item}>
-      <img src={item.image}/>
-      <p className='name'>{item.name}</p>
-      <p className='name'>{item.id}</p>
-      <button onClick={handleLoves}>{loves} {loves ===1? 'Love♥':'Loves♥'}</button>      
+      
+
+      <div class="parent">
+  <div class="card">
+      <div class="content-box">
+          <span class="card-title">
+          {item.name} <br></br> Numero:{item.id}
+          </span>
+          <p class="card-content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          </p>
+        
+<button className='see-more'  onClick={handleFavorite}>{newFavorite} {newFavorite === true? 'añadido':'Añadir favorito'}</button>   
+ 
+      </div>
+      <div class="date-box">
+          <div class="month">
+  <img src={item.image}  className='pokeImage' />
+
+          </div>
+          <span class="date"></span>
+      </div>
+  </div>
 </div>
+ 
         );
       })
     ) : (
