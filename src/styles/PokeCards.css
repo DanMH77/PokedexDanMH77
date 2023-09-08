@@ -1,11 +1,10 @@
-/*works janky on mobile :<*/
-
 
 .pokeImage{
     width: 100px;
     height: 100px;
     display: flex;
-    justify-self: center;
+   justify-content: center;
+    align-items: center;
 }
 
 
@@ -18,15 +17,11 @@
 .Varaja{
 display: flex;
 flex-wrap: wrap;
-
-
-
-
 }
 
 .parent {
     
-    width: 250px;
+    width: 290px;
     height: 390px;
     padding: 20px;
     perspective: 1000px;
@@ -37,10 +32,8 @@ flex-wrap: wrap;
      border-radius: 15px;
     border: 3px solid rgb(255, 255, 255);
     transform-style: preserve-3d;
-    background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0),
-        repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%);
+    background-image: url(https://media.istockphoto.com/id/1188427690/es/foto/fondo-de-decoraci%C3%B3n-de-papel-de-aluminio-arrugado-de-metal.jpg?s=1024x1024&w=is&k=20&c=5kHorvm48czk5QYe2fdkCSwidJAxBDiOKGXt-2u9DYQ=);
     background-size: 60px 60px;
-    background-position: 0 0, 0 0;
     background-color: #f0f0f0;
     width: 100%;
     box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
@@ -53,9 +46,8 @@ flex-wrap: wrap;
   }
   
   .content-box {
-    border-radius: 15px;
+    border-radius: 9px;
     background: rgba(250, 4, 4, 0.732);
-    /* border-radius: 10px 100px 10px 10px; */
     transition: all 0.5s ease-in-out;
     padding: 60px 25px 25px 25px;
     transform-style: preserve-3d;
@@ -110,14 +102,14 @@ flex-wrap: wrap;
     position: absolute;
     top: 17px;
     right: 20px;
-    height: 80px;
-    width: 100px;
+    height: 100px;
+    width: 130px;
     background-image: url(https://pa1.aminoapps.com/6391/7414d26f6624ce64dfa3b3c60e4860ba9006f39e_00.gif);
     background-size: 140px 100px;
     background-repeat: no-repeat;
-    border: 1px solid rgb(5, 14, 17);
+    border: 7px solid rgb(5, 14, 17);
     border-radius: 20px;
-    /* border-radius: 10px; */
+   
     padding: 10px;
     transform: translate3d(0px, 0px, 80px);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;

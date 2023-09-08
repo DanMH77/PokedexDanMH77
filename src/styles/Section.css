@@ -14,6 +14,14 @@
 }
 
 
+.containerText{
+    background-color: aqua;
+}
+.textNew3{
+    text-decoration: none;
+    color: #000;
+    background-color: rgb(235, 255, 19);
+}
 
 .containerNews{
     display: flex;

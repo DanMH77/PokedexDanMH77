@@ -43,9 +43,10 @@ Un extraño Pokémon que se adapta a los entornos más hostiles gracias a sus di
 
 <div className='new2' >
 <iframe  className='VideoChamp' width="300" height="300" src="https://www.youtube.com/embed/7D5IXI6lHg0?si=nFL1g-Z_iT3iQ_En" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-    <button > <a href='https://youtu.be/7D5IXI6lHg0?feature=shared' target='blank'> La más reciente edición del Pokémon World Championships 2023 ya llegó a su fin. Fue un evento lleno de competencias, con encuentros de diferentes juegos de Pokémon que pasarán a la historia.
-</a> </button>
+   <div  className='containerText' >
+    <a  className='textNew3' href='https://youtu.be/7D5IXI6lHg0?feature=shared' target='blank'> La más reciente edición del Pokémon World Championships 2023 ya llegó a su fin. Fue un evento lleno de competencias, con encuentros de diferentes juegos de Pokémon que pasarán a la historia.
+</a>
+   </div>
     
 </div>
 

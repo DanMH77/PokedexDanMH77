@@ -17,6 +17,7 @@ function Navbar(){
         <li>
         <Link to="/pokedex" className='Poke' ><button className="button3">Pokedex</button></Link>
         </li>
+       
     </ul>
 </nav>
 )	}

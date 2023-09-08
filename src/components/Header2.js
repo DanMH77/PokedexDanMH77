@@ -15,16 +15,12 @@ const Header2 = () => {
 
         var fetchedPokemons = [];
         
-       /* for (const id of pokemonIds) {
-            const data = await getRandomPokemonId(id);
-         // const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-        //  const data = await response.json();
-          fetchedPokemons.push(data);
-        }*/
+  
          fetchedPokemons = await Promise.all(
             pokemonIds.map(async (id) => {
               const data = await getRandomPokemonId(id);
               return data;
+          
             })
           );
 

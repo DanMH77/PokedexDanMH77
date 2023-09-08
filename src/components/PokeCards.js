@@ -10,10 +10,8 @@ function Pokedex33() {
   const [newFavorite, setNewFavorite] = useState(false);
   const [loves, setLoves] = useState(0);
   const [page,setPage]=useState(0)
+  const[searchItem,setSearchItem] = useState ('');
 
-  // function updatePage(newPage) {
-  //   setPage(newPage); // Actualiza la página cuando se hace clic en un botón de paginación
-  // }
 
   const handleLoves = () => {
     setLoves(loves + 1);
@@ -24,20 +22,21 @@ function Pokedex33() {
   };
   const totalPokemons = 400;
   const limit = 20;
+  const limit2 = 400;
 function updatePage(e){
   setPage(e.target.value)
 }
   useEffect(() => {
     const fetchPokemon = async () => {
-      // const offset = (page - 1) * ShowLimit; // Calcula el offset
       try {
-        //  const url = "https://pokeapi.co/api/v2/pokemon?Limit=20"
         const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${
           page * limit
         }`;
+        const url2 = `https://pokeapi.co/api/v2/pokemon?limit=${limit2}`
         const fetchedPokemons = [];
         const response = await getPokemonList(url);
         const data = response.array;
+        
 
         setPokemons(data);
       } catch (error) {
@@ -48,10 +47,27 @@ function updatePage(e){
     fetchPokemon();
   }, [page]);
 
+
+  const handleSearch = (e) => {
+    setSearchItem(e.target.value);
+      };
+      const filteredPokemon = Pokemons.filter(
+        (pokemon) =>
+          pokemon.name.toLowerCase().trim().includes(searchItem.toLowerCase().trim()) || // Filtrar por nombre
+          pokemon.id.toString().includes(searchItem) // Filtrar por ID
+      );
+
   return (
+    <>
+      <input  placeholder="Search a Pokemon"
+      value={searchItem}
+      onChange={handleSearch}
+         /><button>Search🔎</button>
     <div className="Varaja">
+    
+    
       {isLoading ? (
-        Pokemons.map((item,index) => {
+        filteredPokemon.map((item,index) => {
           return (
             <div className="parent" key={index}>
               <div className="card">
@@ -84,6 +100,7 @@ function updatePage(e){
           )}
     <Pagination limit={limit} totalPokemons={totalPokemons} updatePage={updatePage} />
     </div>
+    </>
   );
 }
 
