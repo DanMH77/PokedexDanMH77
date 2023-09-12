@@ -2,7 +2,7 @@ import React from 'react';
 import eve from '../styles/images/133.png';
 import '../styles/Section.css'
 import pokeball from '../styles/images/2024-play-pokemon-169.png'
-
+import Psicoespectáculo from '../styles/images/unnamed.jpg'
 
     function Section(){
 
@@ -22,14 +22,6 @@ Un extraño Pokémon que se adapta a los entornos más hostiles gracias a sus di
 </div>
 
 
-
-
-
-{/*                                 */}
-
-
-
-
 <div className='section-1'>
 
 <div className='new2' >
@@ -42,7 +34,7 @@ Un extraño Pokémon que se adapta a los entornos más hostiles gracias a sus di
 
 
 <div className='new2' >
-<iframe  className='VideoChamp' width="300" height="300" src="https://www.youtube.com/embed/7D5IXI6lHg0?si=nFL1g-Z_iT3iQ_En" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe  className='VideoChamp' width="300" height="300" src="https://www.youtube.com/embed/7D5IXI6lHg0?si=nFL1g-Z_iT3iQ_En" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
    <div  className='containerText' >
     <a  className='textNew3' href='https://youtu.be/7D5IXI6lHg0?feature=shared' target='blank'> La más reciente edición del Pokémon World Championships 2023 ya llegó a su fin. Fue un evento lleno de competencias, con encuentros de diferentes juegos de Pokémon que pasarán a la historia.
 </a>
@@ -51,6 +43,22 @@ Un extraño Pokémon que se adapta a los entornos más hostiles gracias a sus di
 </div>
 
  </div>
+ 
+
+ <div className="card2">
+<img  src={Psicoespectáculo} className='Psicoespectáculo' />
+  <div className="card__content2">
+    <p className="card__title2">Psicoespectáculo
+    </p><a  href='https://pokemongolive.com/post/psychic-spectacular-2023?hl=es' target='blank' className="card__description2">¡Vuelve el evento Psicoespectáculo!<br/>
+   <strong>Entrenadores:</strong> <br/>
+
+¡Nos habéis leído el pensamiento! <br/>
+
+¡El evento Psicoespectáculo vuelve con una nueva Investigación temporal, desafíos de colección, incursiones y mucho más!
+    </a>
+  </div>
+</div>
+
 
  </div>   
 

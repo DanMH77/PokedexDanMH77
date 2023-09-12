@@ -9,9 +9,11 @@ import Header2 from '../components/Header2';
    <div>
      <h1>Welcome </h1> <br/>
  <div id='Header'>
-  <Header2/>
   <Section/>
+  <Header2/>
  </div>
+
+
  </div>
 )	}
 

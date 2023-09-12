@@ -2,11 +2,11 @@
     max-width: 138px;
 }
 
-.pokemon-container{
+.pokemon-container3{
     display: flex;
 }
 
-.loader {
+.loader3 {
     --cell-size: 52px;
     --cell-spacing: 1px;
     --cells: 3;

@@ -45,3 +45,40 @@ export async function getPokemonList (url) {
       throw error;  
     }
  }
+
+
+ export async function addPokemon(id){
+    ///fovorites-poke
+    const response= await fetch(`https://64ee628c219b3e2873c32c80.mockapi.io/favorites/favorite-pokemon`,
+    {
+        method:"POST", //envia dato
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({idPokemon:id })
+    }).then((res)=>{
+        if (res.ok){
+            console.log('datos guardados');
+        }
+        else {
+            throw `Error`;
+        }
+    });
+}
+
+
+
+
+
+export async function getPokemonfavorite() {
+
+    // var pokemonFavoritesData = [];
+
+    const response= await fetch(`https://64ee628c219b3e2873c32c80.mockapi.io/favorites/favorite-pokemon`)
+    const data = await response.json();
+
+    //pokemonFavoritesData.push(data);
+    console.log("LOG",data)
+    return data;
+
+}

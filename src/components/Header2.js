@@ -41,14 +41,14 @@ const Header2 = () => {
   return (
     <header>
 
-      <div className="pokemon-container">
+      <div className="pokemon-container3">
         {randomPokemons.map((pokemon) => (
-          <div key={pokemon.id} className="pokemon-card">
+          <div key={pokemon.id} className="pokemon-card3">
             {isLoading ? (
                 <p>Cargando.....</p>
             ): (
                 <>
-              <div className="loader">
+              <div className="loader3">
   <div className="cell d-0">   <img
                    src={defaultImage}
                    alt={pokemon.name}

@@ -20,7 +20,7 @@ flex-wrap: wrap;
 }
 
 .parent {
-    
+    margin: 10px;
     width: 290px;
     height: 390px;
     padding: 20px;
@@ -30,10 +30,9 @@ flex-wrap: wrap;
   .card {
     padding-top: 50px;
      border-radius: 15px;
-    border: 3px solid rgb(255, 255, 255);
     transform-style: preserve-3d;
-    background-image: url(https://media.istockphoto.com/id/1188427690/es/foto/fondo-de-decoraci%C3%B3n-de-papel-de-aluminio-arrugado-de-metal.jpg?s=1024x1024&w=is&k=20&c=5kHorvm48czk5QYe2fdkCSwidJAxBDiOKGXt-2u9DYQ=);
-    background-size: 60px 60px;
+    background-image: url(https://gifdb.com/images/high/galaxy-spinning-planets-0p93aluig3x27in8.gif);
+    background-size: 250px 60px;
     background-color: #f0f0f0;
     width: 100%;
     box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
@@ -46,11 +45,18 @@ flex-wrap: wrap;
   }
   
   .content-box {
+    border: 4px solid white;
     border-radius: 9px;
-    background: rgba(250, 4, 4, 0.732);
+    background-image: url(https://i.pinimg.com/originals/1a/a2/00/1aa2008c04d15f46d38b797cb1452ed4.gif);
+    background-repeat: no-repeat;
+    background-size: 250px 323px;
     transition: all 0.5s ease-in-out;
     padding: 60px 25px 25px 25px;
     transform-style: preserve-3d;
+  }
+
+  .content-box:hover{
+    background-image: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTRmOHM2dHd2N3ZkYWxpeGVpNzI3Z2ZvN2M5NzQwcXRhb2FmYmhwNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Fbox1ygIqnga5dLinz/giphy.gif);
   }
   
   .content-box .card-title {
@@ -84,7 +90,7 @@ flex-wrap: wrap;
     margin-top: 1rem;
     display: inline-block;
     font-weight: 900;
-    font-size: 9px;
+    font-size: 12px;
     text-transform: uppercase;
     color: rgb(7, 185, 255);
     /* border-radius: 5px; */
@@ -104,7 +110,7 @@ flex-wrap: wrap;
     right: 20px;
     height: 100px;
     width: 130px;
-    background-image: url(https://pa1.aminoapps.com/6391/7414d26f6624ce64dfa3b3c60e4860ba9006f39e_00.gif);
+    background-image: url(https://media3.giphy.com/media/hTBdZxUHG2r0XwLFSL/giphy.gif);
     background-size: 140px 100px;
     background-repeat: no-repeat;
     border: 7px solid rgb(5, 14, 17);
@@ -131,3 +137,247 @@ flex-wrap: wrap;
     color: rgb(4, 193, 250);
   }
    
+
+  .delete {
+    --sunGradient: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+    --moonGradient: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 140px;
+    height: 60px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    background-color: transparent;
+    transition: 0.5s;
+    overflow: hidden;
+    border: 4px solid black;
+  }
+  
+  .delete:hover {
+    box-shadow: -15px -15px 500px white;
+    transition: 0.2s;
+  }
+  
+  .delete:hover span {
+    background: var(--sunGradient);
+  }
+  
+  .state {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: inherit;
+    transition: 0.4s;
+    width: 85%;
+    height: 82%;
+    border: 4px solid black;
+  }
+  
+  #sun {
+    display: none;
+    background-color: #212121;
+    opacity: 0.85;
+  }
+  
+  #moon {
+    background-color: #212121;
+    opacity: 0.85;
+  }
+  
+  .delete:hover #sun {
+    display: flex;
+  }
+  
+  .delete:hover #moon {
+    display: none;
+  }
+  
+  .delete:hover .lightRotation {
+    animation: 1s linear reverse infinite rotation413;
+  }
+  
+  .delete:hover .lightRotation2 {
+    animation: 2s linear infinite rotation_413;
+  }
+  
+  .delete:hover .lightRotation3 {
+    animation: 10s linear reverse infinite rotation_413;
+  }
+  
+ .delete:hover .lightRotation4 {
+    animation: 3s linear infinite rotation_413;
+  }
+  
+  .lightRotation {
+    position: absolute;
+    transition: 0.4s;
+    z-index: -1;
+    width: 60px;
+    height: 500px;
+    transform: rotate(50deg);
+    border-radius: inherit;
+    background: var(--moonGradient);
+  }
+  
+  .lightRotation2 {
+    position: absolute;
+    transition: 0.4s;
+    z-index: -1;
+    width: 75px;
+    height: 500px;
+    transform: rotate(110deg);
+    border-radius: inherit;
+    background: var(--moonGradient);
+  }
+  
+  .lightRotation3 {
+    position: absolute;
+    transition: 0.4s;
+    z-index: -1;
+    width: 40px;
+    height: 260px;
+    border-radius: inherit;
+    background: var(--moonGradient);
+  }
+  
+  .lightRotation4 {
+    position: absolute;
+    transition: 0.4s;
+    z-index: -1;
+    width: 24px;
+    height: 220px;
+    transform: rotate(100deg);
+    border-radius: inherit;
+    background: var(--moonGradient);
+  }
+  
+  @keyframes rotation_413 {
+    from {
+      transform: rotate(0deg)
+    }
+  
+    to {
+      transform: rotate(360deg)
+    }
+  }
+  
+
+  .spinnerContainer {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .spinner {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-right-color: #299fff;
+    animation: tri-spinner 1s infinite linear;
+  }
+  
+  .spinner::before,
+  .spinner::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: tri-spinner 2s infinite;
+  }
+  
+  .spinner::after {
+    margin: 8px;
+    animation-duration: 3s;
+  }
+  
+  @keyframes tri-spinner {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  
+  .loader {
+    color: #ffffff;
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+  }
+  
+  .words {
+    overflow: hidden;
+  }
+  
+  .word {
+    font-size: 30px;
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: #299fff;
+    animation: cycle-words 5s infinite;
+  }
+  
+  @keyframes cycle-words {
+    10% {
+      -webkit-transform: translateY(-105%);
+      transform: translateY(-105%);
+    }
+  
+    25% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+  
+    35% {
+      -webkit-transform: translateY(-205%);
+      transform: translateY(-205%);
+    }
+  
+    50% {
+      -webkit-transform: translateY(-200%);
+      transform: translateY(-200%);
+    }
+  
+    60% {
+      -webkit-transform: translateY(-305%);
+      transform: translateY(-305%);
+    }
+  
+    75% {
+      -webkit-transform: translateY(-300%);
+      transform: translateY(-300%);
+    }
+  
+    85% {
+      -webkit-transform: translateY(-405%);
+      transform: translateY(-405%);
+    }
+  
+    100% {
+      -webkit-transform: translateY(-400%);
+      transform: translateY(-400%);
+    }
+  }
+  
+
+
+
+
+  

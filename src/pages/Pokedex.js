@@ -1,9 +1,10 @@
-import React from 'react';
+
 import Pokedex33 from '../components/PokeCards';
 import "../styles/PokedexRout.css"
+import React, { useEffect, useState } from "react";
+
 
     function Pokedex(){
-
  return (
 <div>
 
