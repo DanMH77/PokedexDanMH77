@@ -53,6 +53,7 @@ flex-wrap: wrap;
     transition: all 0.5s ease-in-out;
     padding: 60px 25px 25px 25px;
     transform-style: preserve-3d;
+    max-height: 323px;
   }
 
   .content-box:hover{
@@ -93,7 +94,6 @@ flex-wrap: wrap;
     font-size: 12px;
     text-transform: uppercase;
     color: rgb(7, 185, 255);
-    /* border-radius: 5px; */
     background: white;
     padding: 0.5rem 0.7rem;
     transition: all 0.5s ease-in-out;
@@ -145,8 +145,8 @@ flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 140px;
-    height: 60px;
+    width: 190px;
+    height: 35px;
     color: white;
     font-size: 1em;
     font-weight: bold;

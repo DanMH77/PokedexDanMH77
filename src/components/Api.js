@@ -47,7 +47,7 @@ export async function getPokemonList (url) {
  }
 
 
- export async function addPokemon(id){
+ export async function addPokemon(name,image,id){
     ///fovorites-poke
     const response= await fetch(`https://64ee628c219b3e2873c32c80.mockapi.io/favorites/favorite-pokemon`,
     {
@@ -55,7 +55,7 @@ export async function getPokemonList (url) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({idPokemon:id })
+        body: JSON.stringify({name:name, image:image, id:id })
     }).then((res)=>{
         if (res.ok){
             console.log('datos guardados');
@@ -72,13 +72,33 @@ export async function getPokemonList (url) {
 
 export async function getPokemonfavorite() {
 
-    // var pokemonFavoritesData = [];
-
+    
     const response= await fetch(`https://64ee628c219b3e2873c32c80.mockapi.io/favorites/favorite-pokemon`)
     const data = await response.json();
 
     //pokemonFavoritesData.push(data);
-    console.log("LOG",data)
+   
     return data;
 
 }
+
+
+async function deletePokemonFavorite(id) {
+    try {
+     const getPokemones = await getPokemonfavorite();  
+    let deleteId = "";
+    const verificar = getPokemones.some(({name,id}) =>{
+        if (name == id) {
+            deleteId = id;
+        }
+    })
+     
+
+     return verificar;
+
+
+     }catch (error) {
+      console.error (" Error borrando al Pokemon", error);
+      throw error;  
+    }
+ }

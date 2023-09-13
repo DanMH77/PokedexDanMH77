@@ -11,13 +11,19 @@ function Navbar(){
         <li id='outer'>
             <Link to="/" className='Home' ><button className="button">Home</button></Link> 
         </li>
+
         <li>  
             <Link to="/about" className='About'><button className="button2"> About</button></Link>
         </li>
+
         <li>
         <Link to="/pokedex" className='Poke' ><button className="button3">Pokedex</button></Link>
         </li>
-       
+
+
+        <li>
+        <Link to="/favorites" className='Poke' ><button className="button3">Favorites</button></Link>
+        </li>
        
     </ul>
 </nav>

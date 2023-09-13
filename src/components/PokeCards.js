@@ -3,7 +3,7 @@ import { addPokemon, getPokemonList, getPokemonfavorite } from "./Api";
 import "../styles/PokeCards.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Pagination from "./Pagination";
-
+import { useNavigate } from "react-router-dom";
 
 function Pokedex33() {
   const [Pokemons, setPokemons] = useState([]);
@@ -13,31 +13,34 @@ function Pokedex33() {
   const [page, setPage] = useState(0);
   const [searchItem, setSearchItem] = useState("");
   const [filteredPokemon, setFilteredPokemon] = useState([]);
-  const [update,setUpdate] = useState(false);
+  const [update, setUpdate] = useState(false);
   const [favorites, setFavorites] = useState([]);
-  function updatePage(e){
+  function updatePage(e) {
     setPage(e.target.value);
-    setUpdate(!update)
+    setUpdate(!update);
+  }
+
+  const navigate = useNavigate();
+
+  const handleFavorite = (name, image, idpokedex) => {
+    setNewFavorite((newFavorite = true));
+
+    addPokemon(name, image, idpokedex);
+    setUpdate(!update);
+  };
+
+  function reload(){
+    window.location.reload ();
   }
 
 
-  const handleFavorite = (id) => {
 
-    setNewFavorite(newFavorite = true)
-    
-   
-
-    addPokemon(id)
-    setUpdate(!update)
-  };
   const totalPokemons = 400;
   const limit = 20;
   const limit2 = 400;
   function updatePage(e) {
     setPage(e.target.value);
   }
-
-
 
   useEffect(() => {
     const fetchPokemon = async () => {
@@ -53,21 +56,17 @@ function Pokedex33() {
         const dataFavorites = await getPokemonfavorite();
         setFavorites(dataFavorites);
 
-       
         setPokeTarget(data2);
         setPokemons(data);
-        setFilteredPokemon(data)
+        setFilteredPokemon(data);
       } catch (error) {
         console.error("Error capturando Pokemon data", error);
       }
       setisLoading(true);
     };
     fetchPokemon();
-
   }, [page]);
 
-
- 
   const handleSearch = (e) => {
     setSearchItem(e.target.value);
     let filter = [];
@@ -80,7 +79,7 @@ function Pokedex33() {
             .includes(searchItem.toLowerCase().trim()) || // Filtrar por nombre
           pokemon.id.toString().includes(searchItem) // Filtrar por ID
       );
-      console.log("target",pokeTarget);
+      console.log("target", pokeTarget);
       setFilteredPokemon(filter);
     } else {
       filter = Pokemons.filter(
@@ -95,14 +94,20 @@ function Pokedex33() {
     }
   };
 
+
+
+
+
+
+
+
   return (
     <>
-      <input   
+      <input
         placeholder="Search a Pokemon"
         value={searchItem}
         onChange={handleSearch}
-      />
-
+      /> <button  onClick={()=> reload()}  >Return</button>
       <div className="Varaja">
         {isLoading ? (
           filteredPokemon.map((item, index) => {
@@ -111,30 +116,44 @@ function Pokedex33() {
                 <div className="card">
                   <div className="content-box">
                     <span className="card-title">
-                      {item.name} <br></br> Numero:{item.id}
+                      {item.name} <br></br> Number:{item.id}
                     </span>
                     <p className="card-content">
-                      tipo: {item.type} <br></br>
+                      Type: {item.type} <br></br>
                       Base Experience: {item.experience}
                     </p>
-         
-                    {favorites.some(
-                        (favorite) => favorite.idPokemon === item.id
-                      ) ? (
-                        <button  className="delete"   >
-                          <div className="state" id="moon">Añadido❤️</div>
-<div className="state" id="sun">Eliminar(fav)</div>
-<span className="lightRotation"></span>
-<span className="lightRotation2"></span>
-<span className="lightRotation3"></span>
-<span className="lightRotation4"></span>
-                          </button>
-                      ) : (
-                    <button className="see-more" onClick={() => handleFavorite(item.id)}>
-                      {newFavorite}{" "}
-                      {newFavorite === true ? "añadido" : "Añadir🤍"}
+
+                    <button  className="see-more"
+                      onClick={() => {
+                        navigate("/information");}}>see more
                     </button>
-                      )}
+
+                    {favorites.some(
+                      (favorite) => favorite.name === item.name
+                    ) ? (
+                      <button className="delete">
+                        <div className="state" id="moon">
+                          Added❤️
+                        </div>
+                        <div className="state" id="sun">
+                          Delete(fav)
+                        </div>
+                        <span className="lightRotation"></span>
+                        <span className="lightRotation2"></span>
+                        <span className="lightRotation3"></span>
+                        <span className="lightRotation4"></span>
+                      </button>
+                    ) : (
+                      <button
+                        className="see-more"
+                        onClick={() =>
+                          handleFavorite(item.name, item.image, item.idpokedex)
+                        }
+                      >
+                        {newFavorite}{" "}
+                        {newFavorite === true ? "añadido" : "add to:🤍"}
+                      </button>
+                    )}
                   </div>
                   <div className="date-box">
                     <div className="month">
@@ -147,20 +166,19 @@ function Pokedex33() {
             );
           })
         ) : (
-
           <div className="spinnerContainer">
-  <div className="spinner"></div>
-  <div className="loader">
-    <p>loading</p>
-    <div className="words">
-      <span className="word">ID</span>
-      <span className="word">Pokemon</span>
-      <span className="word">Names</span>
-      <span className="word">Images</span>
-      <span className="word">Cards</span>
-    </div>
-  </div>
-</div>
+            <div className="spinner"></div>
+            <div className="loader">
+              <p>loading</p>
+              <div className="words">
+                <span className="word">ID</span>
+                <span className="word">Pokemon</span>
+                <span className="word">Names</span>
+                <span className="word">Images</span>
+                <span className="word">Cards</span>
+              </div>
+            </div>
+          </div>
         )}
         <Pagination
           limit={limit}
