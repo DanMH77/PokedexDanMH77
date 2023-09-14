@@ -378,6 +378,138 @@ flex-wrap: wrap;
   
 
 
+  @media (max-width: 600px) {
 
+
+    .pokeImage{
+      width: 70px;
+      height: 70px;
+      display: flex;
+     justify-content: center;
+      align-items: center;
+  }
+
+
+
+    .parent {
+      margin: 10px;
+      width: 240px;
+      height: 390px;
+      padding: 20px;
+      perspective: 1000px;
+    }
+    
+    .card {
+      padding-top: 50px;
+       border-radius: 15px;
+      transform-style: preserve-3d;
+      background-image: url(https://gifdb.com/images/high/galaxy-spinning-planets-0p93aluig3x27in8.gif);
+      background-size: 250px 60px;
+      background-color: #f0f0f0;
+      width: 100%;
+      box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+      transition: all 0.5s ease-in-out;
+    }
+    
+    .card:hover {
+      background-position: -100px 100px, -100px 100px;
+      transform: rotate3d(0.5, 1, 0, 30deg);
+    }
+    
+    .content-box {
+      border: 4px solid white;
+      border-radius: 9px;
+      background-image: url(https://i.pinimg.com/originals/1a/a2/00/1aa2008c04d15f46d38b797cb1452ed4.gif);
+      background-repeat: no-repeat;
+      background-size: 250px 323px;
+      transition: all 0.5s ease-in-out;
+      padding: 60px 25px 25px 25px;
+      transform-style: preserve-3d;
+      max-height: 270px;
+    }
+  
+    .content-box:hover{
+      background-image: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTRmOHM2dHd2N3ZkYWxpeGVpNzI3Z2ZvN2M5NzQwcXRhb2FmYmhwNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Fbox1ygIqnga5dLinz/giphy.gif);
+    }
+    
+    .content-box .card-title {
+      display: inline-block;
+      color: white;
+      font-size: 10px;
+      font-weight: 900;
+      transition: all 0.5s ease-in-out;
+      transform: translate3d(0px, 0px, 50px);
+    }
+    
+    .content-box .card-title:hover {
+      transform: translate3d(0px, 0px, 60px);
+    }
+    
+    .content-box .card-content {
+      margin-top: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #f2f2f2;
+      transition: all 0.5s ease-in-out;
+      transform: translate3d(0px, 0px, 30px);
+    }
+    
+    .content-box .card-content:hover {
+      transform: translate3d(0px, 0px, 60px);
+    }
+    
+    .content-box .see-more {
+      cursor: pointer;
+      margin-top: 1rem;
+      display: inline-block;
+      font-weight: 900;
+      font-size: 8px;
+      text-transform: uppercase;
+      color: rgb(7, 185, 255);
+      background: white;
+      padding: 0.5rem 0.7rem;
+      transition: all 0.5s ease-in-out;
+      transform: translate3d(0px, 0px, 20px);
+    }
+    
+    .content-box .see-more:hover {
+      transform: translate3d(0px, 0px, 60px);
+    }
+    
+    .date-box {
+      position: absolute;
+      top: 17px;
+      right: 20px;
+      height: 80px;
+      width: 100px;
+      background-image: url(https://media3.giphy.com/media/hTBdZxUHG2r0XwLFSL/giphy.gif);
+      background-size: 140px 100px;
+      background-repeat: no-repeat;
+      border: 7px solid rgb(5, 14, 17);
+      border-radius: 20px;
+     
+      padding: 10px;
+      transform: translate3d(0px, 0px, 80px);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+    }
+    
+    .date-box span {
+      display: block;
+      text-align: center;
+    }
+    
+    .date-box .month {
+      color: rgb(0, 0, 0);
+    
+    }
+    
+    .date-box .date {
+      font-size: 10px;
+      font-weight: 900;
+      color: rgb(4, 193, 250);
+    }
+
+
+  }
 
   

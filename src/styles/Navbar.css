@@ -13,10 +13,7 @@
 
 #header ul li{
     list-style: none;
-    /* background-size: 160px 40px;
-    border-radius: 15px;
-    background-repeat: no-repeat;
- margin: 30px; */
+
 }
 .Home{
     text-decoration: none;
@@ -202,3 +199,201 @@
   }
   
 
+  @media (max-width: 600px) {
+    
+
+  .Title{
+    color: #000;
+  }
+
+    #header ul{
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+
+
+
+    .button {
+      margin: 30px;
+      font-family: 'font1';
+      font-size: 20px;
+      position: relative;
+      width: 60px;
+      height: 40px;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      color: white;
+      flex-direction: column;
+      justify-content: center;
+      border: none;
+      padding: 12px;
+      gap: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    
+    .button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      left: -4px;
+      top: -1px;
+      margin: auto;
+      width: 70px;
+      height: 48px;
+      border-radius: 10px;
+      background: linear-gradient(-45deg, #ff0000 0%, #ffd000 100% );
+      z-index: -10;
+      pointer-events: none;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .button::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(-45deg, #ff0000 0%, #ff0000 100% );
+      transform: translate3d(0, 0, 0) scale(0.95);
+      filter: blur(20px);
+    }
+    
+    .button:hover::after {
+      filter: blur(30px);
+    }
+    
+    .button:hover::before {
+      transform: rotate(-180deg);
+    }
+    
+    .button:active::before {
+      scale: 0.7;
+    }
+  /*////////////////////////////////////////////Buttom  2//////////////////////////////////////////////////*/
+
+    .button2 {
+      margin: 30px;
+      font-family: 'font1';
+      font-size: 25px;
+      position: relative;
+      width: 60px;
+      height: 40px;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      color: white;
+      flex-direction: column;
+      justify-content: center;
+      border: none;
+      padding: 12px;
+      gap: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    
+    .button2::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      left: -4px;
+      top: -1px;
+      margin: auto;
+      width: 70px;
+      height: 48px;
+      border-radius: 10px;
+      background: linear-gradient(-45deg, #002aff 0%, #fbff00 100% );
+      z-index: -10;
+      pointer-events: none;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .button2::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(-45deg, #0800ff 0%, #0044fd 100% );
+      transform: translate3d(0, 0, 0) scale(0.95);
+      filter: blur(20px);
+    }
+    
+    .button2:hover::after {
+      filter: blur(30px);
+    }
+    
+    .button2:hover::before {
+      transform: rotate(-180deg);
+    }
+    
+    .button2:active::before {
+      scale: 0.7;
+    }
+
+  /*////////////////////////////////////////////Buttom  3//////////////////////////////////////////////////*/
+
+  .button3 {
+    margin: 30px;
+    font-family: 'font1';
+    font-size: 25px;
+    position: relative;
+    width: 60px;
+    height: 40px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .button3::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -4px;
+    top: -1px;
+    margin: auto;
+    width: 70px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e1ff00 0%, #f56200 100% );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .button3::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #ff6200 0%, #d9ff00 100% );
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+  }
+  
+  .button3:hover::after {
+    filter: blur(30px);
+  }
+  
+  .button3:hover::before {
+    transform: rotate(-180deg);
+  }
+  
+  .button3:active::before {
+    scale: 0.7;
+  }
+  
+
+
+
+  }

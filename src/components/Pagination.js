@@ -4,7 +4,6 @@ import "../styles/Pagination.css"
 
 function Pagination({totalPokemons,limit,updatePage}) {
 function createButtons(){
-    console.log("total",totalPokemons,"limit",limit);
     const totalButtons=Math.ceil(totalPokemons/limit)
     let buttons=[]
     for (let i = 0; i <totalButtons; i++) {

@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 <div>
 
   <div   className='header' >
-  <h1>Pokemon Go</h1>
+  <h1 className='Title' >Pokedex by DanMH77</h1>
   </div>
     <Pokedex33/>
  </div>

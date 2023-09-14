@@ -3,7 +3,9 @@
     flex-wrap: wrap;
 }
 
-
+.Title{
+  color: aliceblue;
+}
 
 .parent4 {
     margin: 10px;

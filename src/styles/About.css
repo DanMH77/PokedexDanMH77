@@ -1,0 +1,15 @@
+@font-face{
+    font-family: "font1";
+    src: url("../styles/fonts/Pokemon\ Solid.ttf") format(opentype);}
+
+
+
+.historia{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(243, 32, 32);
+}
+
+.title{
+    color: blue;
+}
+

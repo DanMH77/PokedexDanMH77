@@ -18,7 +18,7 @@ import InformationTotal from '../components/InformationTotal';
      <Route path='/about' element={<About/>} /> 
      <Route path='/pokedex' element={<Pokedex/>} /> 
      <Route path='/favorites' element={<Favorites/>} /> 
-     <Route path='/information' element={<InformationTotal/>} /> 
+     <Route path='/information/:id' element={<InformationTotal/>} /> 
     </Routes>
     </div>
     

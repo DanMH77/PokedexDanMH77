@@ -83,22 +83,64 @@ export async function getPokemonfavorite() {
 }
 
 
-async function deletePokemonFavorite(id) {
-    try {
-     const getPokemones = await getPokemonfavorite();  
-    let deleteId = "";
-    const verificar = getPokemones.some(({name,id}) =>{
-        if (name == id) {
-            deleteId = id;
-        }
-    })
+// async function deletePokemonFavorite(id) {
+//     try {
+//      const getPokemones = await getPokemonfavorite();  
+//     let deleteId = "";
+//     const verificar = getPokemones.some(({name,id}) =>{
+//         if (name == id) {
+//             deleteId = id;
+//         }
+//     })
      
 
-     return verificar;
+//      return verificar;
 
 
-     }catch (error) {
-      console.error (" Error borrando al Pokemon", error);
-      throw error;  
+//      }catch (error) {
+//       console.error (" Error borrando al Pokemon", error);
+//       throw error;  
+//     }
+//  }
+
+
+
+export async function deletePokemonesFavoritos(nameP) {
+    try {
+        const getPokemones = await getPokemonfavorite();
+        let deleteId = '';
+        console.log(nameP);
+
+        const verificar = getPokemones.some(({name,id}) =>{
+            console.log("Delete: " , name , id)
+            if ( name == nameP) {
+                deleteId = id;
+            }
+        }) 
+        
+        console.log(verificar);
+
+        return fetch(`https://64ee628c219b3e2873c32c80.mockapi.io/favorites/favorite-pokemon/${deleteId}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        ).then((res) => {
+          if (res.ok) {
+            console.log("Datos eliminados en mockupApi");
+          } else {
+            throw Error;
+          }
+        });
+
+        // return pokemonfavoritosData;
+
+    } catch (error) { //Se ejecuta si hubo algun error
+        console.error("Hubo un error al llamar al api")
+        return []
     }
- }
+
+}
+

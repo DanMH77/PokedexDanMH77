@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { addPokemon, getPokemonList, getPokemonfavorite } from "./Api";
+import {
+  addPokemon,
+  deletePokemonesFavoritos,
+  getPokemonList,
+  getPokemonfavorite,
+} from "./Api";
 import "../styles/PokeCards.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Pagination from "./Pagination";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function Pokedex33() {
   const [Pokemons, setPokemons] = useState([]);
@@ -22,24 +28,50 @@ function Pokedex33() {
 
   const navigate = useNavigate();
 
-  const handleFavorite = (name, image, idpokedex) => {
+  async function handleFavorite(name, image, idpokedex) {
     setNewFavorite((newFavorite = true));
-
+    Swal.fire({
+      title: "This Pokemon is now one of your favorites", 
+      confirmButtonText: "Great",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("Added!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
     addPokemon(name, image, idpokedex);
     setUpdate(!update);
-  };
-
-  function reload(){
-    window.location.reload ();
   }
 
+  async function deletepokemons(name) {
+    setNewFavorite((newFavorite = true));
+    Swal.fire({
+      title: "This Pokemon was removed from favorites", 
+      confirmButtonText: "OK",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("Removed!", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
+    await deletePokemonesFavoritos(name);
+    setUpdate(!update);
+  }
 
+  function reload() {
+    window.location.reload();
+  }
 
   const totalPokemons = 400;
   const limit = 20;
   const limit2 = 400;
   function updatePage(e) {
     setPage(e.target.value);
+    setUpdate(!update);
   }
 
   useEffect(() => {
@@ -65,7 +97,7 @@ function Pokedex33() {
       setisLoading(true);
     };
     fetchPokemon();
-  }, [page]);
+  }, [update]);
 
   const handleSearch = (e) => {
     setSearchItem(e.target.value);
@@ -94,25 +126,19 @@ function Pokedex33() {
     }
   };
 
-
-
-
-
-
-
-
   return (
     <>
       <input
         placeholder="Search a Pokemon"
         value={searchItem}
         onChange={handleSearch}
-      /> <button  onClick={()=> reload()}  >Return</button>
+      />{" "}
+      <button onClick={() => reload()} >Return</button>
       <div className="Varaja">
         {isLoading ? (
           filteredPokemon.map((item, index) => {
             return (
-              <div className="parent" key={index}>
+              <div className="parent" key={item.id}>
                 <div className="card">
                   <div className="content-box">
                     <span className="card-title">
@@ -123,15 +149,24 @@ function Pokedex33() {
                       Base Experience: {item.experience}
                     </p>
 
-                    <button  className="see-more"
+                    <button
+                      className="see-more"
                       onClick={() => {
-                        navigate("/information");}}>see more
+                        navigate("/information/"+item.id);
+                      }}
+                    >
+                      see more
                     </button>
 
                     {favorites.some(
                       (favorite) => favorite.name === item.name
                     ) ? (
-                      <button className="delete">
+                      <button
+                        className="delete"
+                        onClick={() => {
+                          deletepokemons(item.name);
+                        }}
+                      >
                         <div className="state" id="moon">
                           Added❤️
                         </div>
@@ -150,8 +185,11 @@ function Pokedex33() {
                           handleFavorite(item.name, item.image, item.idpokedex)
                         }
                       >
-                        {newFavorite}{" "}
-                        {newFavorite === true ? "añadido" : "add to:🤍"}
+                        {favorites.some(
+                          ({ idpokedex }) => idpokedex === item.id
+                        ) === true
+                          ? "añadido"
+                          : "add to:🤍"}
                       </button>
                     )}
                   </div>

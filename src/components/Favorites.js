@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from 'react';
 import { getPokemonfavorite } from './Api';
 import "../styles/Favorites.css"
-
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,6 +11,7 @@ import "../styles/Favorites.css"
         const [favoritesPoke, setFavoritesPoke] = useState([]);
 
 
+  const navigate = useNavigate();
 
 useEffect(() => {
 
@@ -25,26 +26,28 @@ useEffect(() => {
      
     };
     fetchPokemonFavorites();
-  })
+  },[])
 
 
  return (
 <>
-<h1>Favorites Pokemon</h1>
+<h1 className='Title' >Favorites Pokemon</h1>
 <div className='dadContainer' >
 {favoritesPoke.map((item, index) =>  {
 return (
 <div  className='mother' key={index}  >
-<div class="parent4">
-  <div class="card4">
-      <div class="content-box4">
-          <span class="card-title4">Nombre: <strong>{item.name}</strong></span>
-          <p class="card-content4">
+<div className="parent4">
+  <div className="card4">
+      <div className="content-box4">
+          <span className="card-title4">Nombre: <strong>{item.name}</strong></span>
+          <p className="card-content4">
              Este pokemon fue agregado a favoritos de {item.id}° 
           </p>
-          <span class="see-more4">See More</span>
+          <span className="see-more4"  onClick={()=> {
+            navigate("/information")
+          }}  >See More</span>
       </div>
-      <div class="date-box4">
+      <div className="date-box4">
         <img src={item.image} className='pokeImage' />
       </div>
   </div>
